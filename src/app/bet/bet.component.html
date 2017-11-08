@@ -1,0 +1,11 @@
+<div *ngIf="raceModel">
+  <h2 [textContent]="raceModel.name"></h2>
+  <p [textContent]="raceModel.startInstant | fromNow"></p>
+  <div class="col-12-col-md-2">
+    <pr-pony (ponyClicked)="betOnPony(pony)" *ngFor="let pony of raceModel.ponies" [ponyModel]="pony" [class.selected-pony]="isPonySelected(pony)"></pr-pony>
+  </div>
+
+  <a [routerLink]="['/races', raceModel.id, 'live']">Watch live!</a>
+
+  <pr-alert *ngIf="betFailed" type="danger" (close)="betFailed = false">The race is already started or finished</pr-alert>
+</div>

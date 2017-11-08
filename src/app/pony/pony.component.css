@@ -1,0 +1,9 @@
+figure {
+    margin: 3px;
+    padding: 3px;
+    font-size: 12px;
+    display: inline-block;
+  }
+  img {
+    height: 50px;
+  }
